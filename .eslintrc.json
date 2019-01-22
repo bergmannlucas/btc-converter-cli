@@ -1,3 +1,10 @@
 {
-    "extends": "airbnb-base"
+  "extends": "airbnb-base",
+  "global": {
+    "describe": true,
+    "it": true
+  },
+  "rules": {
+    "no-unused-expressions": 1
+  }
 }
