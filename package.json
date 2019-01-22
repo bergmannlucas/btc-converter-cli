@@ -1,6 +1,6 @@
 {
   "name": "btc-converter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CLI to convert Bitcoin to any currency provided.",
   "main": "index.js",
   "scripts": {
@@ -53,5 +53,8 @@
     "mocha": "^5.1.1",
     "nyc": "^11.8.0",
     "rimraf": "^2.6.1"
+  },
+  "dependencies": {
+    "commander": "^2.19.0"
   }
 }
