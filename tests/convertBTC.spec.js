@@ -51,4 +51,30 @@ describe('ConvertBTC', () => {
       done();
     }, 300);
   });
+
+  it('should use currency BRLL and 1 as amount default', (done) => {
+    nock('https://apiv2.bitcoinaverage.com')
+      .get('/convert/global')
+      .query({ from: 'BTC', to: 'BRL', amount: 1 })
+      .reply(200, responseMock);
+
+    convertBTC('BRL');
+    setTimeout(() => {
+      expect(consoleStub).to.have.been.calledWith('1 BTC to BRL = 3592.38');
+      done();
+    }, 300);
+  });
+
+  it('should message user when api reply with error', (done) => {
+    nock('https://apiv2.bitcoinaverage.com')
+      .get('/convert/global')
+      .query({ from: 'BTC', to: 'BRL', amount: 1 })
+      .replyWithError('Error');
+
+    convertBTC('BRL');
+    setTimeout(() => {
+      expect(consoleStub).to.have.been.calledWith('Something went wrong in the API. Try in a few minutes.');
+      done();
+    }, 300);
+  });
 });
