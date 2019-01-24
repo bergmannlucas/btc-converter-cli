@@ -9,7 +9,7 @@
     "build:watch": "npm run build -- --watch",
     "lint": "./node_modules/.bin/eslint src/**/*.js tests/**/*.spec.js",
     "prepush": "npm run lint",
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --reporter nyan",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --require babel-polyfill",
     "test:tdd": "npm test -- --watch ",
     "test:converage": "nyc npm test"
   },
@@ -43,6 +43,7 @@
   "homepage": "https://github.com/bergmannlucas/btc-converter-cli#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
@@ -61,6 +62,7 @@
     "chalk": "^2.4.2",
     "commander": "^2.19.0",
     "ora": "^3.0.0",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5"
   }
 }
