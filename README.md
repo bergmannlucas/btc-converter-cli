@@ -1,5 +1,7 @@
 # Bitcoin Converter CLI
+[![Known Vulnerabilities](https://snyk.io/test/github//bergmannlucas/btc-converter-cli/badge.svg)](https://snyk.io/test/github/bergmannlucas/btc-converter-cli)
 
+***
 > Convert Bitcoin to any currency defined.
 
 ![Example CLI running](img/btc-converter.gif)
