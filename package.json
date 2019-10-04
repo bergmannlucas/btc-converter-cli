@@ -5,11 +5,11 @@
   "main": "bin/index.js",
   "scripts": {
     "clear": "rimraf bin",
-    "build": "npm run clear && ./node_modules/.bin/babel --out-dir bin src",
+    "build": "npm run clear && babel --out-dir bin src",
     "build:watch": "npm run build -- --watch",
-    "lint": "./node_modules/.bin/eslint src/**/*.js tests/**/*.spec.js",
+    "lint": "eslint src/**/*.js tests/**/*.spec.js",
     "prepush": "npm run lint",
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --require babel-polyfill",
+    "test": "mocha tests/**/*.spec.js --require @babel/register --require @babel/polyfill",
     "test:tdd": "npm test -- --watch ",
     "test:converage": "nyc npm test"
   },
@@ -26,7 +26,8 @@
       "html"
     ],
     "exclude": [
-      "tests/**"
+      "tests/**",
+      "bin/**"
     ]
   },
   "repository": {
@@ -45,27 +46,28 @@
   },
   "homepage": "https://github.com/bergmannlucas/btc-converter-cli#readme",
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
-    "chai": "^4.1.2",
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/register": "^7.6.2",
+    "chai": "^4.2.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-import": "^2.18.2",
     "husky": "^0.14.3",
-    "mocha": "^5.1.1",
+    "mocha": "^5.2.0",
     "nock": "^10.0.6",
-    "nyc": "^11.8.0",
-    "rimraf": "^2.6.1",
-    "sinon": "^7.2.3",
+    "nyc": "^14.1.1",
+    "rimraf": "^2.7.1",
+    "sinon": "^7.5.0",
     "sinon-chai": "^3.3.0"
   },
   "dependencies": {
     "chalk": "^2.4.2",
-    "commander": "^2.19.0",
-    "ora": "^3.0.0",
+    "commander": "^2.20.1",
+    "ora": "^3.4.0",
     "request": "^2.88.0",
-    "request-promise-native": "^1.0.5"
+    "request-promise-native": "^1.0.7"
   }
 }

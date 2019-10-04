@@ -1,3 +1,6 @@
+# Build babel
+bin
+
 # Logs
 logs
 *.log
