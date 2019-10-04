@@ -40,13 +40,6 @@
     "library"
   ],
   "author": "Lucas Bergmann <lucaasberg@gmail.com>",
-  "contributors": [
-    {
-      "name": "Joao Manoel Neto",
-      "email": "joaaomanooel@gmail.com",
-      "url": "https://github.com/joaaomanooel"
-    }
-  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bergmannlucas/btc-converter-cli/issues"
